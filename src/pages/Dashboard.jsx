@@ -1,10 +1,12 @@
 import {
   ArrowRight,
   BriefcaseBusiness,
+  Database,
   FilePlus2,
   FileText,
   Plus,
   ReceiptText,
+  Trash2,
   UsersRound,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -13,11 +15,13 @@ import Badge from "../components/common/Badge.jsx";
 import Button from "../components/common/Button.jsx";
 import Card from "../components/common/Card.jsx";
 import EmptyState from "../components/common/EmptyState.jsx";
+import Notice from "../components/common/Notice.jsx";
 import {
   getClients,
   getGeneratedDocuments,
   getProjects,
 } from "../services/storageService.js";
+import { clearDemoData, seedDemoData } from "../utils/demoData.js";
 import { documentTypeLabel, formatCurrency, formatDateTime } from "../utils/formatters.js";
 import PageShell from "./PageShell.jsx";
 
@@ -32,14 +36,31 @@ function sortByRecent(items, field = "updatedAt") {
 
 function Dashboard() {
   const [clients, setClients] = useState([]);
+  const [demoNotice, setDemoNotice] = useState("");
   const [documents, setDocuments] = useState([]);
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
+  function loadWorkspaceData() {
     setClients(getClients());
     setProjects(getProjects());
     setDocuments(getGeneratedDocuments());
+  }
+
+  useEffect(() => {
+    loadWorkspaceData();
   }, []);
+
+  function handleSeedDemoData() {
+    seedDemoData();
+    loadWorkspaceData();
+    setDemoNotice("Demo data loaded for local screenshots.");
+  }
+
+  function handleClearDemoData() {
+    clearDemoData();
+    loadWorkspaceData();
+    setDemoNotice("Demo data cleared. Your non-demo records were preserved.");
+  }
 
   const activeProjects = useMemo(
     () => projects.filter((project) => project.status === "active"),
@@ -269,6 +290,33 @@ function Dashboard() {
           </Card>
         </div>
       </div>
+
+      {import.meta.env.DEV ? (
+        <Card className="border-dashed bg-stone-50">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="text-base font-semibold text-zinc-950">Screenshot data tools</h3>
+              <p className="mt-1 max-w-2xl text-sm text-zinc-600">
+                Load or clear local demo records for product screenshots. These controls only appear
+                in the Vite development environment.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button type="button" variant="secondary" onClick={handleSeedDemoData}>
+                <Database className="h-4 w-4" aria-hidden="true" />
+                Load demo data
+              </Button>
+              <Button type="button" variant="ghost" onClick={handleClearDemoData}>
+                <Trash2 className="h-4 w-4" aria-hidden="true" />
+                Clear demo data
+              </Button>
+            </div>
+          </div>
+          <div className="mt-4">
+            <Notice message={demoNotice} tone="neutral" />
+          </div>
+        </Card>
+      ) : null}
     </PageShell>
   );
 }

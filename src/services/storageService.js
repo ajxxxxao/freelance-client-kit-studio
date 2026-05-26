@@ -77,6 +77,7 @@ function normalizeClient(client = {}, options = {}) {
     phone: client.phone || "",
     address: client.address || "",
     notes: client.notes || "",
+    ...(client.isDemo === true ? { isDemo: true } : {}),
     createdAt,
     updatedAt: options.touchUpdatedAt ? now : client.updatedAt || createdAt,
   };
@@ -98,6 +99,7 @@ function normalizeProject(project = {}, options = {}) {
     startDate: project.startDate || "",
     dueDate: project.dueDate || "",
     status: project.status || "draft",
+    ...(project.isDemo === true ? { isDemo: true } : {}),
     createdAt,
     updatedAt: options.touchUpdatedAt ? now : project.updatedAt || createdAt,
   };
@@ -119,6 +121,7 @@ function normalizeGeneratedDocument(document = {}, options = {}) {
       document.metadata && typeof document.metadata === "object" && !Array.isArray(document.metadata)
         ? document.metadata
         : {},
+    ...(document.isDemo === true ? { isDemo: true } : {}),
     createdAt,
     updatedAt: options.touchUpdatedAt ? now : document.updatedAt || createdAt,
   };
