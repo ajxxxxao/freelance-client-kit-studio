@@ -1,0 +1,50 @@
+[
+  {
+    "id": "proposal_send",
+    "type": "email",
+    "name": "Proposal Sending Email",
+    "description": "Send a proposal to a client after scope alignment.",
+    "subject": "Proposal for {{projectName}}",
+    "body": "Hi {{clientName}},\n\nThank you for discussing {{projectName}} with me. I have prepared a proposal that outlines the project background, service scope, timeline, investment, and next steps.\n\nThe proposed investment for this work is {{currency}} {{price}}, with a target delivery date of {{dueDate}}.\n\nPlease review the proposal and let me know if you would like to move forward or discuss any adjustments.\n\nBest,\n{{businessName}}\n{{businessEmail}}"
+  },
+  {
+    "id": "proposal_followup",
+    "type": "email",
+    "name": "Proposal Follow-Up Email",
+    "description": "Follow up after sending a proposal.",
+    "subject": "Following up on {{projectName}} proposal",
+    "body": "Hi {{clientName}},\n\nI wanted to follow up on the proposal for {{projectName}} and check whether you have any questions about the scope, timeline, or investment.\n\nI would be happy to clarify details or make reasonable adjustments before we confirm the next steps.\n\nBest,\n{{businessName}}"
+  },
+  {
+    "id": "project_kickoff",
+    "type": "email",
+    "name": "Project Kickoff Email",
+    "description": "Start a project with a clear kickoff note.",
+    "subject": "Kickoff for {{projectName}}",
+    "body": "Hi {{clientName}},\n\nI am pleased to kick off {{projectName}}. The agreed service focus is {{serviceType}}, and the current target delivery date is {{dueDate}}.\n\nTo keep the project moving smoothly, I will use the agreed scope as our working reference:\n\n{{scope}}\n\nPlease send any access, source materials, or key preferences that should be considered before work begins.\n\nBest,\n{{businessName}}"
+  },
+  {
+    "id": "payment_reminder",
+    "type": "email",
+    "name": "Payment Reminder Email",
+    "description": "Send a professional payment reminder.",
+    "subject": "Payment reminder for {{projectName}}",
+    "body": "Hi {{clientName}},\n\nThis is a friendly reminder regarding payment for {{projectName}}. The current amount due is {{currency}} {{totalAmount}}.\n\nPayment information:\n{{paymentInfo}}\n\nPlease let me know if you need the invoice resent or if there is anything else required from my side.\n\nBest,\n{{businessName}}"
+  },
+  {
+    "id": "project_delivery",
+    "type": "email",
+    "name": "Project Delivery Email",
+    "description": "Send final delivery materials to a client.",
+    "subject": "Delivery for {{projectName}}",
+    "body": "Hi {{clientName}},\n\nI am sharing the final delivery for {{projectName}}. The work has been prepared according to the agreed scope and service focus of {{serviceType}}.\n\nPlease review the materials and let me know if anything needs clarification. If revisions are included in our agreement, you can send consolidated feedback and I will confirm the next steps.\n\nThank you for the opportunity to work on this project.\n\nBest,\n{{businessName}}"
+  },
+  {
+    "id": "feedback_request",
+    "type": "email",
+    "name": "Client Feedback Request Email",
+    "description": "Ask for feedback after project delivery.",
+    "subject": "Feedback request for {{projectName}}",
+    "body": "Hi {{clientName}},\n\nNow that {{projectName}} has been delivered, I would appreciate your feedback on the process and final outcome.\n\nIf you are comfortable sharing a short testimonial, a few sentences about the project experience and results would be very helpful.\n\nThank you again for working with {{businessName}}.\n\nBest,\n{{businessName}}"
+  }
+]

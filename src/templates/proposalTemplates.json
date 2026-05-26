@@ -1,0 +1,9 @@
+[
+  {
+    "id": "standard_service_proposal",
+    "type": "proposal",
+    "name": "Standard Service Proposal",
+    "description": "A concise client-ready proposal for scoped freelance services.",
+    "content": "# Proposal: {{projectName}}\n\nPrepared for: {{clientName}}\nCompany: {{companyName}}\nPrepared by: {{businessName}}\nContact: {{businessEmail}}\n\n## Project Background\nBased on our discussion, {{clientName}} is looking for support with {{projectName}}. The goal is to deliver a focused, practical engagement around {{serviceType}}.\n\n## Service Scope\n{{scope}}\n\n## Deliverables\n- Discovery and alignment on goals\n- Execution of the agreed {{serviceType}} work\n- Client-ready deliverables for review\n- Final handoff files, notes, or recommendations as appropriate\n\n## Timeline\nThe project is planned to begin on {{startDate}} and target completion by {{dueDate}}.\n\n## Investment\nThe proposed fee for this engagement is {{currency}} {{price}}.\n\n## Payment Terms\nPayment terms can be confirmed before kickoff. A common structure is 50% upfront and 50% upon delivery unless otherwise agreed in writing.\n\n## Next Steps\nPlease review this proposal and confirm whether the scope, timeline, and investment are approved. Once approved, {{businessName}} will prepare the next project materials and kickoff details."
+  }
+]

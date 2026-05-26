@@ -1,0 +1,9 @@
+[
+  {
+    "id": "standard_service_invoice",
+    "type": "invoice",
+    "name": "Standard Service Invoice",
+    "description": "A simple invoice template for freelance service projects.",
+    "content": "# Invoice {{invoiceNumber}}\n\nFrom: {{businessName}}\nEmail: {{businessEmail}}\n\n## Client Information\nClient: {{clientName}}\nCompany: {{companyName}}\n\n## Project Information\nProject: {{projectName}}\nService Type: {{serviceType}}\nDue Date: {{dueDate}}\n\n## Service Items\n| Description | Amount |\n| --- | ---: |\n| {{serviceType}} for {{projectName}} | {{currency}} {{price}} |\n\n## Totals\nSubtotal: {{currency}} {{price}}\nTax: {{currency}} {{taxAmount}}\nTotal: {{currency}} {{totalAmount}}\n\n## Payment Information\n{{paymentInfo}}\n\nIf payment information has not been added yet, replace this section with your preferred bank details, card payment link, or payment platform instructions.\n\nThank you for your business."
+  }
+]
