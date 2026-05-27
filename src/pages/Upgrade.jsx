@@ -3,6 +3,8 @@ import Button from "../components/common/Button.jsx";
 import Card from "../components/common/Card.jsx";
 import PageShell from "./PageShell.jsx";
 
+const earlyAccessUrl = "https://tally.so/r/KYaj7X";
+
 const plans = [
   {
     name: "Free Plan",
@@ -33,7 +35,8 @@ const plans = [
       "Client-ready document design",
       "Priority template updates",
     ],
-    cta: "Coming Soon",
+    cta: "Join Early Access",
+    href: earlyAccessUrl,
     highlighted: true,
   },
 ];
@@ -105,14 +108,27 @@ function Upgrade() {
               ))}
             </ul>
 
-            <Button
-              className="mt-8 w-full"
-              disabled
-              type="button"
-              variant={plan.highlighted ? "primary" : "secondary"}
-            >
-              {plan.cta}
-            </Button>
+            {plan.href ? (
+              <Button
+                as="a"
+                className="mt-8 w-full"
+                href={plan.href}
+                rel="noreferrer"
+                target="_blank"
+                variant="primary"
+              >
+                {plan.cta}
+              </Button>
+            ) : (
+              <Button
+                className="mt-8 w-full"
+                disabled
+                type="button"
+                variant="secondary"
+              >
+                {plan.cta}
+              </Button>
+            )}
           </Card>
         ))}
       </div>

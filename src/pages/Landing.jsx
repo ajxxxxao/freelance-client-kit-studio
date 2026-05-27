@@ -43,6 +43,8 @@ const workflow = [
   "Copy or export",
 ];
 
+const earlyAccessUrl = "https://tally.so/r/KYaj7X";
+
 const audiences = [
   "Freelance designers",
   "Freelance developers",
@@ -83,7 +85,8 @@ const pricingPlans = [
       "Priority template updates",
     ],
     highlighted: true,
-    cta: "Coming Soon",
+    cta: "Join Early Access",
+    href: earlyAccessUrl,
   },
 ];
 
@@ -422,14 +425,27 @@ function Landing() {
                     ))}
                   </ul>
 
-                  <Button
-                    className="mt-8 w-full"
-                    disabled
-                    type="button"
-                    variant={plan.highlighted ? "primary" : "secondary"}
-                  >
-                    {plan.cta}
-                  </Button>
+                  {plan.href ? (
+                    <Button
+                      as="a"
+                      className="mt-8 w-full"
+                      href={plan.href}
+                      rel="noreferrer"
+                      target="_blank"
+                      variant="primary"
+                    >
+                      {plan.cta}
+                    </Button>
+                  ) : (
+                    <Button
+                      className="mt-8 w-full"
+                      disabled
+                      type="button"
+                      variant="secondary"
+                    >
+                      {plan.cta}
+                    </Button>
+                  )}
                 </article>
               ))}
             </div>
