@@ -7,6 +7,7 @@ const plans = [
   {
     name: "Free Plan",
     price: "$0",
+    billing: "local workspace",
     description: "A focused local workspace for getting client documents organized.",
     features: [
       "3 clients",
@@ -20,7 +21,8 @@ const plans = [
   },
   {
     name: "Pro Plan",
-    price: "$12",
+    price: "$9",
+    billing: "one-time",
     description: "A professional document kit for freelancers managing ongoing client work.",
     features: [
       "Unlimited clients",
@@ -89,7 +91,7 @@ function Upgrade() {
               <span className="text-4xl font-semibold tracking-tight text-zinc-950">
                 {plan.price}
               </span>
-              <span className="pb-1 text-sm text-zinc-500">/ month</span>
+              <span className="pb-1 text-sm text-zinc-500">{plan.billing}</span>
             </div>
 
             <ul className="mt-8 space-y-3">

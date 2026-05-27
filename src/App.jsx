@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import EmailTemplates from "./pages/EmailTemplates.jsx";
 import ExportCenter from "./pages/ExportCenter.jsx";
 import InvoiceGenerator from "./pages/InvoiceGenerator.jsx";
+import Landing from "./pages/Landing.jsx";
 import Projects from "./pages/Projects.jsx";
 import ProposalGenerator from "./pages/ProposalGenerator.jsx";
 import Upgrade from "./pages/Upgrade.jsx";
@@ -13,6 +14,7 @@ import Upgrade from "./pages/Upgrade.jsx";
 function App() {
   return (
     <Routes>
+      <Route path="landing" element={<Landing />} />
       <Route element={<AppLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="clients" element={<Clients />} />
